@@ -1,4 +1,7 @@
 # В данном файле описаны базовые консольные команды Apache Kafka
 
 # Создание топика
+/bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic TOPIC_NAME
 
+# Просмотр списка топиков на брокере или кластере
+/opt/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list
