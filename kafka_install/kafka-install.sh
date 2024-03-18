@@ -1,9 +1,14 @@
 #/bin/bash
 ### Скрипт по установке Apache Kafka на Linux
 ### Переменные
-DISTR_DIR=~/distr
-KAFKA_DIR=/opt/kafka
-DATA_DIR=/KAFKADATA
+echo "Введите путь куда скачать дистрибутив"
+read DISTR_DIR
+sleep 1
+echo "Введите путь куда установится Apache Kafka дистрибутив"
+read KAFKA_DIR
+sleep 1
+echo "Введите путь где Apache Kafka будет хранить данные"
+read DATA_DIR
 
 ### Обновление системы
 clear
@@ -11,7 +16,7 @@ sleep 1
 echo "Обновляем систему"
 sleep 2
 sudo apt update -y
-sudo apt upgrade -y
+echo | sudo apt upgrade -y 
 clear
 ### Установка Java и проверка версии
 sleep 2
@@ -37,8 +42,8 @@ clear
 echo "Создаем пользователя кафка"
 sleep 2
 sudo useradd -r -c 'Kafka broker user service' kafka
-sudo chown -R kafka:kafka /opt/kafka
-sudo chown -R kafka:kafka /KAFKADATA
+sudo chown -R kafka:kafka $KAFKA_DIR
+sudo chown -R kafka:kafka $DATA_DIR
 clear
 ### Скачивание дистрибутива kafka в папку ~/distr
 echo "Требуется ссылка на дистрибутив,вставьте полную ссылку:"
