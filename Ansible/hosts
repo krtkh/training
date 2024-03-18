@@ -1,0 +1,11 @@
+# Обозначаем группу хостов, пишем имя сервера и передаем значение. Хосты можно собирать в группы
+
+[test_server]
+linux1 ansible_host=1.1.1.1 
+
+[prod_server]
+linux2 ansible_host=2.2.2.2
+
+[all_servers:children]
+prod_server
+test_server
