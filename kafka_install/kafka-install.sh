@@ -16,7 +16,7 @@ sleep 1
 echo "Обновляем систему"
 sleep 2
 sudo apt update -y
-echo | sudo apt upgrade -y 
+sudo apt upgrade -y
 clear
 ### Установка Java и проверка версии
 sleep 2
