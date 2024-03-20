@@ -1,0 +1,9 @@
+# Файл конфига при настроке SSL на Kafka. 
+# Передается в опции --command-config
+
+security.protocol=SSL
+ssl.truststore.location=/opt/kafka/ssl/root_ca.jks
+ssl.truststore.password=qwe123
+ssl.keystore.location=/opt/kafka/ssl/keystore.jks
+ssl.keystore.password=qwe123
+ssl.key.password=qwe123
